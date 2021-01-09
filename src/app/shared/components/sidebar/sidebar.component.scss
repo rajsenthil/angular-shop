@@ -1,0 +1,28 @@
+:host {
+    .mat-icon {
+        vertical-align: middle;
+        margin-right: 20px;
+    }
+
+    .profile-card {
+        text-align: center;
+        padding: 0 5px 5px 5px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+  .mat-subheader {
+    color: cadetblue;
+  }
+
+  .mat-list-base, mat-nav-list, .mat-list-item {
+    color: azure;
+    font-size: small;
+  }
+}
+

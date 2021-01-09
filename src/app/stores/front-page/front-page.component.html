@@ -1,0 +1,32 @@
+<div fxLayout="row" >
+  <div fxLayout="column" fxFlex.lg="0 1 calc(20% - 16px)" fxFlex.lt-lg="0 1 calc(30% - 16px)" fxFlex.xs="0 1 calc(100% - 16px)" style="padding-left: 40px; padding-right: 10px">
+    <mat-card>
+      <button mat-button class="mat-primary" style="font-size: large;" (click)="deselectCategory()"><mat-label>All Products</mat-label></button>
+      <mat-divider></mat-divider>
+      <mat-selection-list [multiple]="false" #categoryList>
+        <mat-list-option *ngFor="let category of categories.value; index as i">
+          {{category.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+  <div fxLayout="column">
+    <div fxLayout="row wrap" fxFlex.lg="0 1 calc(33% - 16px)" fxFlex.lt-lg="0 1 calc(50% - 16px)" fxFlex.xs="0 1 calc(100% - 16px)" >
+      <mat-card class="example-card" *ngFor="let product of productsData.value; index as i">
+        <img matCardImage [src]="IMAGE_HOST+productsDigitalContent.value[i].digitalContents[0].url" class="card-image"  style="padding: 10px 10px 10px 10px">
+        <mat-card-content [innerHTML]=""><mat-card-title>{{product.productName}}</mat-card-title>
+          <mat-card-subtitle>${{product.productPrice}}</mat-card-subtitle></mat-card-content>
+
+        <mat-card-actions align="start">
+          <button mat-raised-button (click)="changeBadge()" class="mat-primary" [matBadge]=badgeValue [matBadgeHidden]="badeNumber <=0" matBadgeColor="warn" matBadgeSize="large" matBadgePosition="before"><mat-icon>add_shopping_cart</mat-icon><span>add to cart</span></button>
+          <button mat-raised-button (click)="removeFromCart()" class="mat-accent" [disabled]="badeNumber <=0"><mat-icon>remove_shopping_cart</mat-icon><span>remove from cart</span></button>
+        </mat-card-actions>
+      </mat-card>
+      <div class="example-container">
+        <button class="fabposition" mat-fab color="primary" [disabled]="badeNumber <=0" (click)="showCart()">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

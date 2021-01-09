@@ -1,0 +1,68 @@
+{
+  "/auth": {
+    "target": "http://localhost:30081/login",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/auth" : ""}
+  },
+  "/api/auth/signin": {
+    "target": "http://localhost:30079/api/auth/signin",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/api/auth/signin" : ""}
+  },
+  "/api/auth/signup": {
+    "target": "http://localhost:30079/api/auth/signup",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/api/auth/signup" : ""}
+  },
+  "/catalogs": {
+    "target": "http://localhost:30082/catalogs",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/catalogs" : ""}
+  },
+  "/categories": {
+    "target": "http://localhost:30280/categories",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/categories" : ""}
+  },
+  "/filter": {
+    "target": "http://localhost:30282/catalogs/filter",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/filter" : ""}
+  },
+  "/attributes": {
+    "target": "http://localhost:30084/attributes",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/attributes" : ""}
+  },
+  "/attributeGroups": {
+    "target": "http://localhost:30084/attributeGroups",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/attributeGroups" : ""}
+  },
+  "/products": {
+    "target": "http://localhost:30280/products",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/products" : ""}
+  },
+  "/productContents": {
+    "target": "http://localhost:30280/productContents",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/productContents" : ""}
+  },
+  "/productDigitalAssets/": {
+    "target": "http://localhost:30280/productDigitalAssets/",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/productDigitalAssets/" : ""}
+  }
+}

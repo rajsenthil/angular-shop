@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <div fxShow="true" fxFlex fxLayout>
+    <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+    <div fxFlex>
+      <a href="#" mat-button><img [src]=LOGO width="50"/></a>
+    </div>
+    <div fxFlex fxLayoutAlign="flex-end start" *ngIf="!isLoggedIn">
+      <button mat-button routerLink="/user/login">
+        <span style="color: #212529">login</span>
+        <mat-icon class="mat-primary">login</mat-icon>
+      </button>
+      <button mat-button routerLink="/user/register">
+        <span style="color: #212529">register</span>
+        <mat-icon class="mat-primary">person_add</mat-icon>
+      </button>
+    </div>
+    <div fxFlex fxLayoutAlign="flex-end start" *ngIf="isLoggedIn">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <span style="color: #212529">{{username}}</span>
+        <mat-icon class="mat-primary">arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateTo('/user')">
+          <mat-icon>person</mat-icon>
+          <span>profile</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('/user/history')">
+          <mat-icon>view_list</mat-icon>
+          <span>orders</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>logout</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div style="padding-right: 20px">
+      <button mat-button color="primary" (click)="showCart()">
+        <span style="color: #212529">cart</span>
+        <mat-icon [matBadge]=badgeValue>shopping_cart</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>

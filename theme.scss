@@ -1,0 +1,124 @@
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$pachaiColor: (
+            '50': 'e5e9ea',
+            '100': 'bec8cb',
+            '200': '93a3a9',
+            '300': '677e87',
+            '400': '47626d',
+            '500': '264653',
+            '600': '223f4c',
+            '700': '1c3742',
+            '800': '172f39',
+            '900': '0d2029',
+            'A100': '68c8ff',
+            'A200': '35b5ff',
+            'A400': '02a3ff',
+            'A700': '0093e7',
+            contrast: (
+              50: $black-87-opacity,
+              100: $black-87-opacity,
+              200: $black-87-opacity,
+              300: $black-87-opacity,
+              400: $black-87-opacity,
+              500: white,
+              600: white,
+              700: white,
+              800: white,
+              900: white,
+              A100: $black-87-opacity,
+              A200: $black-87-opacity,
+              A400: $black-87-opacity,
+              A700: white,
+            ));
+
+$orangeColor: (
+            '50': 'fceeea',
+            '100': 'f8d4cb',
+            '200': 'f3b7a8',
+            '300': 'ee9a85',
+            '400': 'eb856b',
+            '500': 'e76f51',
+            '600': 'e4674a',
+            '700': 'e05c40',
+            '800': 'dd5237',
+            '900': 'd74027',
+            'A100': 'ffffff',
+            'A200': 'ffe4e0',
+            'A400': 'ffb8ad',
+            'A700': 'ffa194',
+            contrast: (
+              50: $black-87-opacity,
+              100: $black-87-opacity,
+              200: $black-87-opacity,
+              300: $black-87-opacity,
+              400: $black-87-opacity,
+              500: white,
+              600: white,
+              700: white,
+              800: white,
+              900: white,
+              A100: $black-87-opacity,
+              A200: $black-87-opacity,
+              A400: $black-87-opacity,
+              A700: white,
+            ));
+
+$ilamPachai: (
+            '50': 'e5f3f2',
+            '100': 'bfe2dd',
+            '200': '95cec7',
+            '300': '6abab1',
+            '400': '4aaca0',
+            '500': '2a9d8f',
+            '600': '259587',
+            '700': '1f8b7c',
+            '800': '198172',
+            '900': '0f6f60',
+            'A100': 'a3ffef',
+            'A200': '70ffe6',
+            'A400': '3dffdd',
+            'A700': '24ffd8',
+            contrast: (
+              50: $black-87-opacity,
+              100: $black-87-opacity,
+              200: $black-87-opacity,
+              300: $black-87-opacity,
+              400: $black-87-opacity,
+              500: white,
+              600: white,
+              700: white,
+              800: white,
+              900: white,
+              A100: $black-87-opacity,
+              A200: $black-87-opacity,
+              A400: $black-87-opacity,
+              A700: white,
+            ));
+
+$candy-app-primary: mat-palette($pachaiColor);
+$candy-app-accent:  mat-palette($ilamPachai);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn:    mat-palette($orangeColor);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$candy-app-theme: mat-light-theme((
+  color: (
+    primary: $candy-app-primary,
+    accent: $candy-app-accent,
+    warn: $candy-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
